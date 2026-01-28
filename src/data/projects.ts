@@ -60,7 +60,7 @@ export const projects: Project[] = [
             'Neural Command Interface: Architect complex rosters via plain English intent recognition.',
             'Sub-Second State Integrity: Event-driven architecture ensuring a single source of truth.'
         ],
-        demoLink: '#',
+        demoLink: 'https://shiftsync.milosheski.com',
         image: '/projects/shiftsync.png',
     },
     {
