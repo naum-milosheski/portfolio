@@ -19,6 +19,7 @@ export default function ContactSection() {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({
@@ -30,18 +31,34 @@ export default function ContactSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError(null);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('https://formspree.io/f/xkobneve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
 
-        // Reset after showing success
-        setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({ name: '', email: '', company: '', message: '' });
-        }, 3000);
+            setIsSubmitted(true);
+
+            // Reset after showing success
+            setTimeout(() => {
+                setIsSubmitted(false);
+                setFormData({ name: '', email: '', company: '', message: '' });
+            }, 3000);
+        } catch {
+            setError('Something went wrong. Please try again or email me directly.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const inputClasses = `
@@ -199,6 +216,12 @@ export default function ContactSection() {
                                             placeholder="Briefly describe what you want to build..."
                                         />
                                     </div>
+
+                                    {error && (
+                                        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+                                            {error}
+                                        </div>
+                                    )}
 
                                     <button
                                         type="submit"
