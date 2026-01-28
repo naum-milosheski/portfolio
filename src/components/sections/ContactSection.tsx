@@ -153,6 +153,15 @@ export default function ContactSection() {
                                 </motion.div>
                             ) : (
                                 <>
+                                    {/* Honeypot field - hidden from humans, catches spam bots */}
+                                    <input
+                                        type="text"
+                                        name="_gotcha"
+                                        style={{ display: 'none' }}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <div>
                                             <label htmlFor="name" className="block text-sm text-text-muted mb-2">
