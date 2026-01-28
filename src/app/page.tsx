@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <GlassHeader />
 
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSection />
         <TechStackMarquee />
         <SelectedWork />

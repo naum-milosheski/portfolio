@@ -57,7 +57,7 @@ export default function ContactSection() {
   `;
 
     return (
-        <section id="contact" className="py-16 sm:py-24 md:py-20 lg:py-32 relative">
+        <section id="contact" className="py-16 sm:py-24 md:py-20 lg:py-32 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Column - CTA Text */}

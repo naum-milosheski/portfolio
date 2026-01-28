@@ -5,7 +5,7 @@ import { comparisons } from '@/data/projects';
 
 export default function HybridBio() {
     return (
-        <section id="about" className="py-16 sm:py-24 md:py-20 lg:py-32 relative">
+        <section id="about" className="py-16 sm:py-24 md:py-20 lg:py-32 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                 {/* Section Header */}
                 <motion.div

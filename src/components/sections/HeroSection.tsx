@@ -22,7 +22,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <section className="relative min-h-[100dvh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                     {/* Left Column - Text Content (Wider for typography) */}
@@ -67,7 +67,7 @@ export default function HeroSection() {
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                         className="relative flex justify-center lg:justify-end lg:col-span-5 order-1 lg:order-2"
                     >
-                        {/* Hero Image with CONTOUR DROP-SHADOW (rim light effect) */}
+                        {/* Hero Image with Layered Masking & Back-Glow */}
                         <div className="relative z-10 w-[280px] sm:w-[340px] md:w-[320px] lg:w-[540px]">
                             <Image
                                 src="/images/hero-cutout.png"
@@ -75,31 +75,31 @@ export default function HeroSection() {
                                 width={540}
                                 height={660}
                                 priority
-                                className="w-full h-auto"
+                                className="w-full h-auto relative z-10"
                                 style={{
                                     filter: `
-                                        drop-shadow(0 0 15px rgba(168, 85, 247, 0.5))
-                                        drop-shadow(0 0 30px rgba(168, 85, 247, 0.3))
-                                        drop-shadow(0 0 60px rgba(124, 58, 237, 0.2))
+                                        drop-shadow(0 0 15px rgba(168, 85, 247, 0.3))
+                                        drop-shadow(0 0 30px rgba(99, 102, 241, 0.2))
+                                        drop-shadow(0 0 50px rgba(168, 85, 247, 0.1))
                                     `,
                                     maskImage: `
+                                        linear-gradient(to bottom, transparent 0%, black 15%, black 65%, transparent 100%),
                                         radial-gradient(
-                                            ellipse 85% 75% at 50% 35%,
-                                            black 40%,
-                                            rgba(0,0,0,0.8) 55%,
-                                            rgba(0,0,0,0.4) 70%,
-                                            transparent 85%
+                                            ellipse 50% 85% at 50% 45%,
+                                            black 45%,
+                                            transparent 100%
                                         )
                                     `,
                                     WebkitMaskImage: `
+                                        linear-gradient(to bottom, transparent 0%, black 15%, black 65%, transparent 100%),
                                         radial-gradient(
-                                            ellipse 85% 75% at 50% 35%,
-                                            black 40%,
-                                            rgba(0,0,0,0.8) 55%,
-                                            rgba(0,0,0,0.4) 70%,
-                                            transparent 85%
+                                            ellipse 50% 85% at 50% 45%,
+                                            black 45%,
+                                            transparent 100%
                                         )
                                     `,
+                                    WebkitMaskComposite: 'source-in',
+                                    maskComposite: 'intersect',
                                 }}
                             />
                         </div>
