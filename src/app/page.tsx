@@ -51,7 +51,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/naum-milosheski"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-text-primary transition-colors"
