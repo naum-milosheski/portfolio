@@ -54,7 +54,7 @@ export const projects: Project[] = [
         featured: true,
         order: 1,
         size: 'large',
-        techStack: ['Next.js', 'Supabase', 'OpenAI', 'TypeScript'],
+        techStack: ['Next.js', 'Supabase', 'Gemini', 'TypeScript'],
         features: [
             'Heuristic Matching Engine: Multi-dimensional scoring for optimized, budget-compliant staffing.',
             'Neural Command Interface: Architect complex rosters via plain English intent recognition.',
@@ -90,13 +90,13 @@ export const projects: Project[] = [
         tagline: 'Intelligent Order Management System',
         tag: 'Intelligent Order Management System',
         description: "Eliminating order friction for trade suppliers. ProBuild transforms messy contractor text messages into validated purchase orders—parsing natural language commands, fuzzy-matching products to inventory, and calculating totals in under 2 seconds.",
-        longDescription: "ProBuild Supply eliminates the operational friction of B2B trade supply by replacing manual order entry with an intelligent processing engine. Using GPT-4o-mini for natural language parsing and a Levenshtein-based fuzzy matching algorithm for inventory lookup, the system transforms informal contractor messages into fully validated, priced orders—complete with confidence-scored matches and human-reviewable suggestions for ambiguous items. Built with dual-portal architecture—a staff dashboard for order management and a client portal for self-service ordering—it maintains accuracy across the entire order lifecycle, from raw text input to calculated line totals.",
+        longDescription: "ProBuild Supply eliminates the operational friction of B2B trade supply by replacing manual order entry with an intelligent processing engine. Using Gemini for natural language parsing and a Levenshtein-based fuzzy matching algorithm for inventory lookup, the system transforms informal contractor messages into fully validated, priced orders—complete with confidence-scored matches and human-reviewable suggestions for ambiguous items. Built with dual-portal architecture—a staff dashboard for order management and a client portal for self-service ordering—it maintains accuracy across the entire order lifecycle, from raw text input to calculated line totals.",
         featured: true,
         order: 3,
         size: 'small',
-        techStack: ['Next.js', 'Supabase', 'OpenAI', 'TypeScript'],
+        techStack: ['Next.js', 'Supabase', 'Gemini', 'TypeScript'],
         features: [
-            'Neural Order Parser: Transform messy contractor text into validated purchase orders via GPT-4o-mini intent recognition.',
+            'Neural Order Parser: Transform messy contractor text into validated purchase orders via Gemini 2.0 intent recognition.',
             'Fuzzy Matching Engine: Levenshtein-scored product lookup with configurable confidence thresholds and human-reviewable suggestions.',
             'Confidence-Scored Review: Visual match quality indicators with one-click resolution for ambiguous product matches.'
         ],
