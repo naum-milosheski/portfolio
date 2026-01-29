@@ -18,13 +18,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Naum Milosheski | Senior AI Architect",
-  description: "Custom AI Software. Built in Days, Not Months. Combining world-class design with next-gen AI architecture.",
+  title: "Naum Milosheski | AI-Native Full-Stack Engineer",
+  description: "Strategic full-stack engineering for founders. Enterprise-grade software built in days, not months.",
   keywords: ["AI Architect", "Custom AI Software", "Product Engineer", "AI Development"],
   authors: [{ name: "Naum Milosheski" }],
   openGraph: {
-    title: "Naum Milosheski | Senior AI Architect",
-    description: "Custom AI Software. Built in Days, Not Months.",
+    title: "Naum Milosheski | AI-Native Full-Stack Engineer",
+    description: "Strategic full-stack engineering for founders. Enterprise-grade software built in days, not months.",
     type: "website",
   },
 };
