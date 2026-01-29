@@ -80,7 +80,7 @@ export const projects: Project[] = [
             'Vision-Based Feature Detection: Computer vision detects luxury amenities from property photography to auto-populate property specs.',
             'Generative Listing Copy: Multimodal AI drafts sophisticated, lifestyle-focused listing descriptions from raw data inputs.'
         ],
-        demoLink: '#',
+        demoLink: 'https://luxehome.milosheski.com/',
         image: '/projects/luxehome.png',
     },
     {
