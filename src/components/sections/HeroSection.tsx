@@ -22,7 +22,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative min-h-[100dvh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <section className="relative min-h-[100svh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                     {/* Left Column - Text Content (Wider for typography) */}
