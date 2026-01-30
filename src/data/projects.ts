@@ -80,7 +80,7 @@ export const projects: Project[] = [
             'Vision-Based Feature Detection: Computer vision detects luxury amenities from property photography to auto-populate property specs.',
             'Generative Listing Copy: Multimodal AI drafts sophisticated, lifestyle-focused listing descriptions from raw data inputs.'
         ],
-        demoLink: 'https://luxehome.milosheski.com/',
+        demoLink: 'https://luxehome.milosheski.com',
         image: '/projects/luxehome.png',
     },
     {
@@ -100,7 +100,7 @@ export const projects: Project[] = [
             'Fuzzy Matching Engine: Levenshtein-scored product lookup with configurable confidence thresholds and human-reviewable suggestions.',
             'Confidence-Scored Review: Visual match quality indicators with one-click resolution for ambiguous product matches.'
         ],
-        demoLink: 'https://probuild.milosheski.com/',
+        demoLink: 'https://probuild.milosheski.com',
         image: '/projects/probuild.png',
     },
 ];
