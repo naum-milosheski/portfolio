@@ -14,6 +14,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     const scrollRef = useRef<HTMLDivElement>(null);
     const [showScrollHint, setShowScrollHint] = useState(false);
     const [canScroll, setCanScroll] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // Default to true to prevent hydration mismatch heavy animations
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Initial scroll check
     useEffect(() => {
@@ -74,7 +84,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl cursor-pointer"
+                        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md md:backdrop-blur-xl cursor-pointer"
                     />
 
                     {/* Modal Container */}
@@ -121,8 +131,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                         {/* 3D Perspective Stage */}
                                         <div className="relative z-20 w-full h-full flex items-center justify-center p-6 md:p-10 [perspective:2000px]">
                                             <motion.div
-                                                initial={{ rotateY: -30, rotateX: 15, opacity: 0, scale: 0.8, x: -30 }}
-                                                animate={{
+                                                initial={isMobile ? { opacity: 0, scale: 0.9 } : { rotateY: -30, rotateX: 15, opacity: 0, scale: 0.8, x: -30 }}
+                                                animate={isMobile ? { opacity: 1, scale: 1 } : {
                                                     rotateY: -20,
                                                     rotateX: 8,
                                                     opacity: 1,
@@ -130,7 +140,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                                     x: 0,
                                                     y: [0, -10, 0]
                                                 }}
-                                                transition={{
+                                                transition={isMobile ? { duration: 0.5 } : {
                                                     opacity: { duration: 1 },
                                                     rotateY: { duration: 1.2, ease: "easeOut" },
                                                     rotateX: { duration: 1.2, ease: "easeOut" },
@@ -150,12 +160,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                                     className="w-full h-auto object-contain block"
                                                 />
 
-                                                {/* Professional Screen Gloss Reflection */}
-                                                <motion.div
-                                                    animate={{ x: ['100%', '-100%'] }}
-                                                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                                                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-20deg] pointer-events-none"
-                                                />
+                                                {/* Professional Screen Gloss Reflection - Desktop Only */}
+                                                {!isMobile && (
+                                                    <motion.div
+                                                        animate={{ x: ['100%', '-100%'] }}
+                                                        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                                                        className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-20deg] pointer-events-none"
+                                                    />
+                                                )}
 
                                                 {/* Bottom Shadow Lift */}
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />

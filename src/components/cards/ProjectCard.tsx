@@ -24,7 +24,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
                 ease: [0.22, 1, 0.36, 1],
                 delay: index * 0.1
             }}
-            className={`group cursor-pointer overflow-hidden transition-all duration-500 hover:shadow-glow-sm rounded-2xl h-full ${isLarge ? 'row-span-2' : ''}`}
+            className={`group cursor-pointer overflow-hidden transition-[transform,shadow,opacity] duration-500 hover:shadow-glow-sm rounded-2xl h-full ${isLarge ? 'row-span-2' : ''} will-change-transform`}
             style={{
                 background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
                 border: '1px solid rgba(255,255,255,0.05)',
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
                 {project.image && (
                     <div className="absolute -top-4 -right-8 w-[75%] h-[75%] pointer-events-none overflow-hidden z-0">
                         <motion.div
-                            className="w-full h-full grayscale-[0.8] group-hover:grayscale-0 opacity-40 group-hover:opacity-80 transition-all duration-700 ease-out group-hover:scale-110"
+                            className="w-full h-full grayscale-[0.8] group-hover:grayscale-0 opacity-40 group-hover:opacity-80 transition-all duration-700 ease-out md:group-hover:scale-110"
                             style={{
                                 backgroundImage: `url(${project.image})`,
                                 backgroundSize: '140%',
