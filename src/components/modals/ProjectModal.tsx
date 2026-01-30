@@ -131,8 +131,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                         {/* 3D Perspective Stage */}
                                         <div className="relative z-20 w-full h-full flex items-center justify-center p-6 md:p-10 [perspective:2000px]">
                                             <motion.div
-                                                initial={isMobile ? { opacity: 0, scale: 0.9 } : { rotateY: -30, rotateX: 15, opacity: 0, scale: 0.8, x: -30 }}
-                                                animate={isMobile ? { opacity: 1, scale: 1 } : {
+                                                initial={{ rotateY: -30, rotateX: 15, opacity: 0, scale: 0.8, x: -30 }}
+                                                animate={{
                                                     rotateY: -20,
                                                     rotateX: 8,
                                                     opacity: 1,
@@ -140,7 +140,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                                     x: 0,
                                                     y: [0, -10, 0]
                                                 }}
-                                                transition={isMobile ? { duration: 0.5 } : {
+                                                transition={{
                                                     opacity: { duration: 1 },
                                                     rotateY: { duration: 1.2, ease: "easeOut" },
                                                     rotateX: { duration: 1.2, ease: "easeOut" },
