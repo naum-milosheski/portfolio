@@ -22,9 +22,9 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative min-h-[100svh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <section className="relative min-h-[100svh] flex items-center pt-20 pb-12 md:pt-32 md:pb-24 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div className="grid lg:grid-cols-12 gap-6 md:gap-12 lg:gap-8 items-center">
                     {/* Left Column - Text Content (Wider for typography) */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
@@ -68,7 +68,7 @@ export default function HeroSection() {
                         className="relative flex justify-center lg:justify-end lg:col-span-5 order-1 lg:order-2"
                     >
                         {/* Hero Image with Layered Masking & Back-Glow */}
-                        <div className="relative z-10 w-[280px] sm:w-[340px] md:w-[320px] lg:w-[540px]">
+                        <div className="relative z-10 w-[240px] sm:w-[340px] md:w-[320px] lg:w-[540px]">
                             <Image
                                 src="/images/hero-cutout.png"
                                 alt="Naum Milosheski - Senior AI Architect"
