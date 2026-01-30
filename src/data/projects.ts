@@ -100,7 +100,7 @@ export const projects: Project[] = [
             'Fuzzy Matching Engine: Levenshtein-scored product lookup with configurable confidence thresholds and human-reviewable suggestions.',
             'Confidence-Scored Review: Visual match quality indicators with one-click resolution for ambiguous product matches.'
         ],
-        demoLink: '#',
+        demoLink: 'https://probuild.milosheski.com/',
         image: '/projects/probuild.png',
     },
 ];
