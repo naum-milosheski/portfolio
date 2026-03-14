@@ -52,8 +52,8 @@ export const projects: Project[] = [
         description: "Eliminating the 'Chaos Tax' of manual staffing. ShiftSync transforms natural language commands into mathematically optimized schedules - enforcing budget limits and condensing hours of work into seconds of automated logic.",
         longDescription: "ShiftSync eliminates the operational friction of luxury staffing by replacing manual workflows with an intelligent operations engine. Using a neural parsing engine for intent recognition and a weighted heuristic algorithm for talent matching, the system automatically provisions high-rated staff while enforcing strict budget and availability constraints. Architected as an event-driven system with PostgreSQL triggers and real-time synchronization, it maintains absolute data integrity across the entire shift lifecycle—from roster generation to automated financial reconciliation.",
         featured: true,
-        order: 1,
-        size: 'large',
+        order: 3,
+        size: 'small',
         techStack: ['Next.js', 'Supabase', 'Gemini', 'TypeScript'],
         features: [
             'Heuristic Matching Engine: Multi-dimensional scoring for optimized, budget-compliant staffing.',
@@ -92,8 +92,8 @@ export const projects: Project[] = [
         description: "Eliminating order friction for trade suppliers. ProBuild transforms messy contractor text messages into validated purchase orders—parsing natural language commands, fuzzy-matching products to inventory, and calculating totals in under 2 seconds.",
         longDescription: "ProBuild Supply eliminates the operational friction of B2B trade supply by replacing manual order entry with an intelligent processing engine. Using Gemini for natural language parsing and a Levenshtein-based fuzzy matching algorithm for inventory lookup, the system transforms informal contractor messages into fully validated, priced orders—complete with confidence-scored matches and human-reviewable suggestions for ambiguous items. Built with dual-portal architecture—a staff dashboard for order management and a client portal for self-service ordering—it maintains accuracy across the entire order lifecycle, from raw text input to calculated line totals.",
         featured: true,
-        order: 3,
-        size: 'small',
+        order: 1,
+        size: 'large',
         techStack: ['Next.js', 'Supabase', 'Gemini', 'TypeScript'],
         features: [
             'Neural Order Parser: Transform messy contractor text into validated purchase orders via Gemini 2.0 intent recognition.',

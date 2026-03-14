@@ -30,10 +30,10 @@ export default function SelectedWork() {
 
                 {/* Bento Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Large Card - ShiftSync */}
+                    {/* Large Card - ProBuild Supply */}
                     <div className="md:col-span-2 lg:col-span-2 lg:row-span-2 h-full">
                         <ProjectCard
-                            project={projects.find(p => p.slug === 'shiftsync')!}
+                            project={projects.find(p => p.slug === 'probuild-supply')!}
                             index={0}
                             onClick={setSelectedProject}
                         />
@@ -48,10 +48,10 @@ export default function SelectedWork() {
                         />
                     </div>
 
-                    {/* Small Card - ProBuild Supply */}
+                    {/* Small Card - ShiftSync */}
                     <div className="h-full">
                         <ProjectCard
-                            project={projects.find(p => p.slug === 'probuild-supply')!}
+                            project={projects.find(p => p.slug === 'shiftsync')!}
                             index={2}
                             onClick={setSelectedProject}
                         />
