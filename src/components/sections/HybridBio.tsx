@@ -24,92 +24,181 @@ export default function HybridBio() {
                     </p>
                 </motion.div>
 
-                {/* Comparison Grid - MONOCHROMATIC BENTO STYLE */}
-                <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
-                    {/* Traditional Devs Column */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                <div className="relative">
+                    {/* MOBILE LAYOUT (< LG) - Retain original two independent columns for stacking */}
+                    <div className="grid lg:hidden gap-6 md:gap-8">
+                        {/* Traditional Devs Column */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="p-6 md:p-8 rounded-2xl"
+                            style={{
+                                background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
+                                border: '1px solid rgba(255,255,255,0.05)',
+                                borderTop: '1px solid rgba(255,255,255,0.1)',
+                            }}
+                        >
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                                    <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-text-muted">
+                                    The Traditional Agency Model
+                                </h3>
+                            </div>
+
+                            <ul className="space-y-6">
+                                {comparisons.map((item) => (
+                                    <li key={item.id} className="flex items-start gap-3">
+                                        <span className="text-text-muted mt-0.5 opacity-50">—</span>
+                                        <div>
+                                            <p className="text-sm sm:text-base text-text-muted font-medium leading-tight">{item.traditionalTitle}</p>
+                                            <p className="text-text-muted/60 text-xs sm:text-sm mt-1">{item.traditionalBody}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+
+                        {/* My Approach Column */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="p-6 md:p-8 rounded-2xl relative overflow-hidden"
+                            style={{
+                                background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
+                                border: '1px solid rgba(255,255,255,0.05)',
+                                borderTop: '1px solid rgba(255,255,255,0.1)',
+                            }}
+                        >
+                            {/* Subtle Glow Accent */}
+                            <div
+                                className="absolute top-0 right-0 w-40 h-40 opacity-20"
+                                style={{
+                                    background: 'radial-gradient(circle, var(--glow-purple), transparent 70%)',
+                                    filter: 'blur(50px)',
+                                }}
+                                aria-hidden="true"
+                            />
+
+                            <div className="flex items-center gap-3 mb-6 relative z-10">
+                                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-text-primary">
+                                    My Model
+                                </h3>
+                            </div>
+
+                            <ul className="space-y-6 relative z-10">
+                                {comparisons.map((item) => (
+                                    <li key={item.id} className="flex items-start gap-3">
+                                        <span className="text-white mt-0.5">→</span>
+                                        <div>
+                                            <p className="text-sm sm:text-base text-text-primary font-medium leading-tight">{item.myApproachTitle}</p>
+                                            <p className="text-text-secondary text-xs sm:text-sm mt-1">{item.myApproachBody}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </div>
+
+                    {/* DESKTOP LAYOUT (>= LG) - Unified grid for precise row alignment */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="p-6 md:p-8 rounded-2xl"
-                        style={{
-                            background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
-                            border: '1px solid rgba(255,255,255,0.05)',
-                            borderTop: '1px solid rgba(255,255,255,0.1)',
-                        }}
+                        className="hidden lg:block relative"
                     >
-                        <div className="flex items-center gap-3 mb-6">
-                            {/* Gray/Dark icon for Traditional */}
-                            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                        {/* Static Background Columns */}
+                        <div className="absolute inset-0 grid grid-cols-2 gap-8 pointer-events-none">
+                            <div 
+                                className="rounded-2xl"
+                                style={{
+                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
+                                    border: '1px solid rgba(255,255,255,0.05)',
+                                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                                }}
+                            />
+                            <div 
+                                className="rounded-2xl relative overflow-hidden"
+                                style={{
+                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
+                                    border: '1px solid rgba(255,255,255,0.05)',
+                                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                                }}
+                            >
+                                <div
+                                    className="absolute top-0 right-0 w-40 h-40 opacity-20"
+                                    style={{
+                                        background: 'radial-gradient(circle, var(--glow-purple), transparent 70%)',
+                                        filter: 'blur(50px)',
+                                    }}
+                                    aria-hidden="true"
+                                />
                             </div>
-                            <h3 className="text-lg sm:text-xl font-semibold text-text-muted">
-                                The Traditional Agency Model
-                            </h3>
                         </div>
 
-                        <ul className="space-y-6">
-                            {comparisons.map((item) => (
-                                <li key={item.id} className="flex items-start gap-3">
-                                    <span className="text-text-muted mt-0.5 opacity-50">—</span>
-                                    <div>
-                                        <p className="text-sm sm:text-base text-text-muted font-medium leading-tight">{item.traditionalTitle}</p>
-                                        <p className="text-text-muted/60 text-xs sm:text-sm mt-1">{item.traditionalBody}</p>
+                        {/* Foreground Content - Rows cross horizontal gap to enforce 1:1 baseline */}
+                        <div className="relative z-10 w-full py-8">
+                            {/* Headers */}
+                            <div className="grid grid-cols-2 gap-8 w-full mb-6">
+                                <div className="flex items-center gap-3 px-8">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
                                     </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
-                    {/* My Approach Column */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="p-6 md:p-8 rounded-2xl relative overflow-hidden"
-                        style={{
-                            background: 'linear-gradient(to bottom, rgba(255,255,255,0.03), transparent)',
-                            border: '1px solid rgba(255,255,255,0.05)',
-                            borderTop: '1px solid rgba(255,255,255,0.1)',
-                        }}
-                    >
-                        {/* Subtle Glow Accent */}
-                        <div
-                            className="absolute top-0 right-0 w-40 h-40 opacity-20"
-                            style={{
-                                background: 'radial-gradient(circle, var(--glow-purple), transparent 70%)',
-                                filter: 'blur(50px)',
-                            }}
-                            aria-hidden="true"
-                        />
-
-                        <div className="flex items-center gap-3 mb-6 relative z-10">
-                            {/* Bright White icon for My Approach */}
-                            <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
+                                    <h3 className="text-xl font-semibold text-text-muted">
+                                        The Traditional Agency Model
+                                    </h3>
+                                </div>
+                                
+                                <div className="flex items-center gap-3 px-8">
+                                    <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-text-primary">
+                                        My Model
+                                    </h3>
+                                </div>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-semibold text-text-primary">
-                                My Model
-                            </h3>
-                        </div>
 
-                        <ul className="space-y-6 relative z-10">
-                            {comparisons.map((item) => (
-                                <li key={item.id} className="flex items-start gap-3">
-                                    <span className="text-white mt-0.5">→</span>
-                                    <div>
-                                        <p className="text-sm sm:text-base text-text-primary font-medium leading-tight">{item.myApproachTitle}</p>
-                                        <p className="text-text-secondary text-xs sm:text-sm mt-1">{item.myApproachBody}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+                            {/* Item Rows */}
+                            <ul className="flex flex-col space-y-6">
+                                {comparisons.map((item) => (
+                                    <li key={item.id} className="grid grid-cols-2 gap-8 w-full">
+                                        <div className="flex items-start gap-3 px-8">
+                                            <span className="text-text-muted mt-0.5 opacity-50">—</span>
+                                            <div>
+                                                <p className="text-base text-text-muted font-medium leading-tight">{item.traditionalTitle}</p>
+                                                <p className="text-text-muted/60 text-sm mt-1">{item.traditionalBody}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3 px-8">
+                                            <span className="text-white mt-0.5">→</span>
+                                            <div>
+                                                <p className="text-base text-text-primary font-medium leading-tight">{item.myApproachTitle}</p>
+                                                <p className="text-text-secondary text-sm mt-1">{item.myApproachBody}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </motion.div>
                 </div>
 
