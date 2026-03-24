@@ -86,16 +86,15 @@ export default function ContactSection() {
                         className="space-y-6 text-center md:text-left"
                     >
                         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                            Let&apos;s Build Something{' '}
+                            Ready to{' '}
                             <span
                                 className="bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-purple bg-clip-text text-transparent"
                             >
-                                Extraordinary
+                                Ship?
                             </span>
                         </h2>
                         <p className="mt-2 sm:mt-4 text-text-secondary text-base sm:text-lg max-w-lg">
-                            Whether you have a clear vision or just a rough idea, I&apos;ll help you transform it into
-                            production-ready AI-powered software that becomes a permanent business asset.
+                            Whether you have a full spec or just a rough idea - I&apos;ll scope it, build it, and hand it over. No agencies. No bloat. No delays.
                         </p>
 
                         <div className="flex flex-col gap-4 pt-4">

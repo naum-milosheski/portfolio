@@ -41,8 +41,8 @@ export default function HeroSection() {
                             </h1>
 
                             <p className="text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl lg:max-w-3xl mx-auto lg:mx-0">
-                                I bridge the gap between 'No-Code' limitations and 'Agency' prices. <br className="hidden lg:block" />
-                                Strategic full-stack engineering for founders who need to ship fast.
+                                Senior engineering quality. None of the agency overhead. <br className="hidden lg:block" />
+                                Built for founders who need to move fast.
                             </p>
                         </div>
 

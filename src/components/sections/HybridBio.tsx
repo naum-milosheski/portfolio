@@ -212,8 +212,8 @@ export default function HybridBio() {
                 >
                     <p className="font-semibold text-text-primary mb-2">The result:</p>
                     <p>
-                        Faster iteration. Cleaner architecture. <br />
-                        And software that actually ships.
+                        software that ships faster, costs less, <br />
+                        and doesn't fall apart after launch.
                     </p>
                 </motion.div>
             </div>
