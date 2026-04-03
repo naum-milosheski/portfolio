@@ -89,16 +89,16 @@ export const projects: Project[] = [
         title: 'ProBuild',
         tagline: 'Intelligent Order Management System',
         tag: 'Intelligent Order Management System',
-        description: "Eliminating order friction for trade suppliers. ProBuild transforms messy contractor text messages into validated purchase orders—parsing natural language commands, fuzzy-matching products to inventory, and calculating totals in under 2 seconds.",
-        longDescription: "ProBuild Supply eliminates the operational friction of B2B trade supply by replacing manual order entry with an intelligent processing engine. Using Gemini for natural language parsing and a Levenshtein-based fuzzy matching algorithm for inventory lookup, the system transforms informal contractor messages into fully validated, priced orders—complete with confidence-scored matches and human-reviewable suggestions for ambiguous items. Built with dual-portal architecture—a staff dashboard for order management and a client portal for self-service ordering—it maintains accuracy across the entire order lifecycle, from raw text input to calculated line totals.",
+        description: "Eliminating order friction for trade suppliers. ProBuild transforms contractor messages, photos, and PDFs into validated purchase orders — matched to inventory and invoiced in seconds.",
+        longDescription: "ProBuild Supply eliminates the operational friction of B2B trade supply by replacing manual order entry with an intelligent processing engine. Staff can paste a contractor message, upload a PDF purchase order, or photograph a handwritten note — Gemini extracts the line items, maps them to live inventory with AI-scored confidence levels, and flags anything ambiguous for human review. Confirmed orders generate a branded invoice PDF in one click. Built with dual-portal architecture — a staff dashboard for order management and a client portal for self-service ordering — ProBuild covers the entire order lifecycle from raw input to invoiced delivery.",
         featured: true,
         order: 1,
         size: 'large',
         techStack: ['Next.js', 'Supabase', 'Gemini', 'TypeScript'],
         features: [
-            'Neural Order Parser: Transform messy contractor text into validated purchase orders via Gemini 2.0 intent recognition.',
-            'Fuzzy Matching Engine: Levenshtein-scored product lookup with configurable confidence thresholds and human-reviewable suggestions.',
-            'Confidence-Scored Review: Visual match quality indicators with one-click resolution for ambiguous product matches.'
+            'Neural Order Parser: Transform contractor text messages, uploaded PDFs, and handwritten photo notes into validated purchase orders via Gemini vision and language models.',
+            'Smart Inventory Matching: AI-scored product lookup against your live catalog with confidence indicators and human-reviewable suggestions for ambiguous items.',
+            'Instant Invoice Generation: One-click branded PDF invoice download from any confirmed order, ready to send to the contractor immediately.'
         ],
         demoLink: 'https://probuild.milosheski.com',
         image: '/projects/probuild.png',
