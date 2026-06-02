@@ -24,6 +24,8 @@ export default function HeroSection() {
               <a
                 href="https://lonestar.milosheski.com"
                 className="btn btn-primary btn-lg"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 See it live →
               </a>
