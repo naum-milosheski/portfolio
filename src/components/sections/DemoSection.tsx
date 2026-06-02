@@ -93,8 +93,7 @@ export default function DemoSection() {
             </ul>
             <a
               href="https://lonestar.milosheski.com"
-              className="btn btn-primary btn-lg"
-              style={{ marginTop: '8px' }}
+              className="btn btn-primary btn-lg demo-cta"
             >
               Try the live demo →
             </a>
