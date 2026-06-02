@@ -1217,3 +1217,31 @@ html.js .reveal.in {
 .stagger>*:nth-child(5) {
   animation-delay: .45s;
 }
+
+/* ---------- MOBILE SPACING OVERRIDES ----------
+   Placed last so they win source-order against the base
+   .hero / section.block / footer padding rules above.
+   Breakpoint matches where the layout goes single-column (860px). */
+@media(max-width:860px) {
+  .hero {
+    padding: 28px 0 44px;
+  }
+
+  section.block {
+    padding: 48px 0;
+  }
+
+  footer {
+    padding: 24px 0;
+  }
+}
+
+@media(max-width:600px) {
+  .hero {
+    padding: 24px 0 40px;
+  }
+
+  section.block {
+    padding: 40px 0;
+  }
+}
