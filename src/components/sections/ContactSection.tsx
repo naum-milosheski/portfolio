@@ -2,6 +2,15 @@
 
 import { useState } from 'react';
 import Reveal from '@/components/Reveal';
+import Select from '@/components/ui/Select';
+
+const businessTypes = [
+  'Roofing',
+  'HVAC',
+  'Plumbing',
+  'Other home services',
+  'Other',
+];
 
 interface FormData {
   name: string;
@@ -37,9 +46,7 @@ export default function ContactSection() {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -186,18 +193,18 @@ export default function ContactSection() {
                   </div>
                   <div className="field">
                     <label htmlFor="businessType">Business type</label>
-                    <select
+                    <Select
                       id="businessType"
                       name="businessType"
                       value={formData.businessType}
-                      onChange={handleChange}
-                    >
-                      <option>Roofing</option>
-                      <option>HVAC</option>
-                      <option>Plumbing</option>
-                      <option>Other home services</option>
-                      <option>Other</option>
-                    </select>
+                      options={businessTypes}
+                      onChange={(value) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          businessType: value,
+                        }))
+                      }
+                    />
                   </div>
                 </div>
                 <div className="field">

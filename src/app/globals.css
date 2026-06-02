@@ -848,8 +848,8 @@ form {
 }
 
 .field input,
-.field select,
-.field textarea {
+.field textarea,
+.select-trigger {
   width: 100%;
   background: #100e0b;
   border: 1px solid var(--line-strong);
@@ -862,8 +862,8 @@ form {
 }
 
 .field input:focus,
-.field select:focus,
-.field textarea:focus {
+.field textarea:focus,
+.select-trigger:focus-visible {
   outline: none;
   border-color: var(--amber);
 }
@@ -871,6 +871,83 @@ form {
 .field textarea {
   resize: vertical;
   min-height: 84px;
+}
+
+/* ---------- CUSTOM SELECT ---------- */
+.select {
+  position: relative;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.select-chevron {
+  display: flex;
+  color: var(--ink-faint);
+  transition: transform .2s, color .2s;
+}
+
+.select-trigger:hover .select-chevron,
+.select-trigger[aria-expanded="true"] .select-chevron {
+  color: var(--ink-dim);
+}
+
+.select-chevron.open {
+  transform: rotate(180deg);
+}
+
+.select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .5);
+  max-height: 240px;
+  overflow-y: auto;
+  animation: select-pop .14s ease-out;
+}
+
+@keyframes select-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.select-option {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--ink-dim);
+  font-size: .95rem;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+
+.select-option.active {
+  background: rgba(245, 165, 36, .1);
+  color: var(--ink);
+}
+
+.select-option.selected {
+  color: var(--amber);
+  font-weight: 500;
 }
 
 .two {

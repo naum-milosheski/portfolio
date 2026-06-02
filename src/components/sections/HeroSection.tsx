@@ -48,10 +48,7 @@ export default function HeroSection() {
 
           <div className="portrait-card">
             <div className="portrait">
-              {/* TODO: add headshot at /public/naum.jpg, then uncomment the <img> below
-                  and remove the <div className="monogram"> placeholder. */}
-              {/* <img src="/naum.jpg" alt="Naum Milosheski" /> */}
-              <div className="monogram">NM</div>
+              <img src="/images/naum.png" alt="Naum Milosheski" />
               <div className="portrait-tag">
                 <div className="name">Naum Milosheski</div>
                 <div className="role">
