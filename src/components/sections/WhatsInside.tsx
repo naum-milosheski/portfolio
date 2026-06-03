@@ -45,8 +45,8 @@ const features: { icon: React.ReactNode; title: string; body: React.ReactNode }[
         <path d="M12 9v4M12 17h.01" />
       </>
     ),
-    title: 'Knows an emergency from a quote request',
-    body: 'Active leaks and storm damage are flagged and sent to you immediately for dispatch. Routine jobs get booked directly. Every customer gets the right response.',
+    title: 'Knows an emergency from a routine request',
+    body: 'Urgent jobs get flagged and sent to you immediately for dispatch. Routine requests get booked directly. Every customer gets the right response — fast when it matters, scheduled when it doesn\'t.',
   },
   {
     icon: svg(
@@ -80,7 +80,7 @@ const features: { icon: React.ReactNode; title: string; body: React.ReactNode }[
       </>
     ),
     title: 'Cuts down no-shows',
-    body: 'Automatic reminders before every appointment, so fewer customers forget and your crew’s day doesn’t get wasted on empty driveways.',
+    body: 'Automatic reminders before every appointment, so fewer customers forget and your schedule doesn\'t get wasted.',
   },
   {
     icon: svg(
