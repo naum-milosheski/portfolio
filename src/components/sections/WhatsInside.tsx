@@ -101,7 +101,7 @@ const features: { icon: React.ReactNode; title: string; body: React.ReactNode }[
         <path d="m19 9-5 5-4-4-3 3" />
       </>
     ),
-    title: 'Run and improved every month',
+    title: 'Monitored and improved monthly',
     body: 'I monitor the system, send you a monthly summary of what it captured and booked, and keep tuning it. It gets sharper over time — not stale.',
   },
 ];
